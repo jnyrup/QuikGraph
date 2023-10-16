@@ -146,6 +146,13 @@ namespace QuikGraph.Collections
         public int Count => _heap.Count;
 
         /// <inheritdoc />
+        public void Clear()
+        {
+            _heap.Clear();
+            _cells.Clear();
+        }
+
+        /// <inheritdoc />
         public bool Contains(TVertex value)
         {
             return _cells.TryGetValue(value, out FibonacciHeapCell<TDistance, TVertex> cell)

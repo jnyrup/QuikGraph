@@ -14,6 +14,11 @@ namespace QuikGraph.Collections
         int Count { get; }
 
         /// <summary>
+        /// Clears the queue
+        /// </summary>
+        void Clear();
+
+        /// <summary>
         /// Checks if this queue contains the given <paramref name="value"/>.
         /// </summary>
         /// <param name="value">Value to check.</param>

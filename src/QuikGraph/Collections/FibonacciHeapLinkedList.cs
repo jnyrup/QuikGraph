@@ -1,4 +1,4 @@
-#if SUPPORTS_SERIALIZATION
+﻿#if SUPPORTS_SERIALIZATION
 using System;
 #endif
 using System.Collections;
@@ -108,6 +108,23 @@ namespace QuikGraph.Collections
 
             cell.Next = null;
             cell.Previous = null;
+        }
+
+        /// <summary>
+        /// Clears the list
+        /// </summary>
+        public void Clear()
+        {
+            FibonacciHeapCell<TPriority, TValue> current = First;
+            while (current != null)
+            {
+                FibonacciHeapCell<TPriority, TValue> temp = current;
+                current = current.Next;
+                temp.Invalidate();
+            }
+
+            First = null;
+            _last = null;
         }
 
         #region IEnumerable

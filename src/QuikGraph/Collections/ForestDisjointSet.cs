@@ -80,6 +80,13 @@ namespace QuikGraph.Collections
         public int ElementCount => _elements.Count;
 
         /// <inheritdoc />
+        public void Clear()
+        {
+            _elements.Clear();
+            SetCount = 0;
+        }
+
+        /// <inheritdoc />
         public void MakeSet(T value)
         {
             if (value == null)

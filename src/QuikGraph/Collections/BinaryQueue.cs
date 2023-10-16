@@ -40,7 +40,7 @@ namespace QuikGraph.Collections
         /// <exception cref="T:System.ArgumentNullException"><paramref name="distanceFunc"/> is <see langword="null"/>.</exception>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="distanceComparison"/> is <see langword="null"/>.</exception>
         public BinaryQueue(
-            [NotNull] Func<TVertex, TDistance> distanceFunc, 
+            [NotNull] Func<TVertex, TDistance> distanceFunc,
             [NotNull] Comparison<TDistance> distanceComparison)
         {
             if (distanceComparison is null)
@@ -54,6 +54,12 @@ namespace QuikGraph.Collections
 
         /// <inheritdoc />
         public int Count => _heap.Count;
+
+        /// <inheritdoc />
+        public void Clear()
+        {
+            _heap.Clear();
+        }
 
         /// <inheritdoc />
         public bool Contains(TVertex value)

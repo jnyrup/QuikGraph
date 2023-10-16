@@ -319,6 +319,16 @@ namespace QuikGraph.Collections
             return true;
         }
 
+        /// <summary>
+        /// Clears the heap
+        /// </summary>
+        public void Clear()
+        {
+            Array.Clear(_items, 0, _items.Length);
+            Count = 0;
+            ++_version;
+        }
+
         #region IEnumerable
 
         IEnumerator IEnumerable.GetEnumerator()

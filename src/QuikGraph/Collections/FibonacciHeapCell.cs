@@ -74,5 +74,16 @@ namespace QuikGraph.Collections
         {
             return new KeyValuePair<TPriority, TValue>(Priority, Value);
         }
+
+        /// <summary>
+        /// Invalidates the cell for Garbage Collection
+        /// </summary>
+        internal void Invalidate()
+        {
+            Parent = null;
+            Children = null;
+            Previous = null;
+            Next = null;
+        }
     }
 }

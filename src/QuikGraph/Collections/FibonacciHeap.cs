@@ -451,6 +451,17 @@ namespace QuikGraph.Collections
             Count += heap.Count;
         }
 
+        /// <summary>
+        /// Clears the heap
+        /// </summary>
+        public void Clear()
+        {
+            _cells.Clear();
+            _degreeToCell.Clear();
+            Count = 0;
+            Top = null;
+        }
+
         #region IEnumerable
 
         /// <inheritdoc />

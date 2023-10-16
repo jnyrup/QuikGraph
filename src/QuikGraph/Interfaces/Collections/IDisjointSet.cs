@@ -65,5 +65,10 @@ namespace QuikGraph.Collections
         /// <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
         [Pure]
         bool Contains([NotNull] T value);
+
+        /// <summary>
+        /// Clears the set
+        /// </summary>
+        void Clear();
     }
 }
